@@ -1,0 +1,166 @@
+/* General */
+body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-family: 'FoundrySterling';
+}
+
+form {
+  /* display: grid;
+  grid-template-columns: max-content max-content;
+  grid-gap: 5px; */
+  margin-bottom: 1em;
+}
+
+.form-control:disabled, .form-control[readonly] {
+  background-color: #fff;
+}
+
+#qrcode {
+  margin: 0 auto;
+}
+
+a, label {
+  font-family: "Avenir";
+}
+
+.csvInfosDisplay{
+  display: none;
+}
+.csvInfos{
+  font-size: 20px;
+}
+
+@font-face {
+    font-family: "Quicksand";
+    src: url("../../web-basics-helper-kit/font/Quicksand.ttf");
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("../../web-basics-helper-kit/font/Avenir/AvenirLTStd-Black.otf");
+}
+@font-face {
+  font-family: "FoundrySterling";
+  src: url("../../web-basics-helper-kit/font/FoundrySterling/FoundrySterling-Book.otf");
+}
+/* Form and QrCode generator */
+fieldset {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    grid-gap: 5px;
+    margin-bottom: 1em;
+}
+
+fieldset label {
+    text-align: right;
+}
+
+fieldset label:after {
+    content: ":";
+}
+
+#qrcode {
+    margin: 0 auto;
+}
+#qrcode canvas {
+  width: 100vw;
+  height: auto;
+}
+#qrcode-div {
+  display: none;
+}
+#qroutputvalue
+{
+    visibility: hidden;
+    margin: -9999999px;
+}
+
+#qrcode-div-print {
+  display: none;
+}
+/* Scroll Bar */
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+  
+  /* Track */
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+  
+  /* Handle */
+::-webkit-scrollbar-thumb {
+	background: #888;
+}
+  
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
+
+@media print {
+  body {
+    padding-top: 2px;
+  }
+  label {
+    visibility: hidden;
+    position: fixed;
+    height: 0;
+    font-size: 0;
+  }
+  div {
+    height: fit-content;
+  }
+  input[type="date"]::-webkit-inner-spin-button,
+  input[type="date"]::-webkit-calendar-picker-indicator {
+      display: none;
+      -webkit-appearance: none;
+  }
+  input, select {
+    width: 100%;
+    margin: 0;
+    border: none;
+    background: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-overflow: '';
+    font-size-adjust: auto;
+  }
+  select::-ms-expand {
+    display: none;
+  }
+  #qrcode canvas
+  {
+    width: 100%; /* Can be in percentage also. */
+    max-width: 250px;
+    height: 100%;
+    max-height: 250px;
+    margin: 0 auto;
+    position: relative;
+  }
+  #qrcode 
+  {
+    width: fit-content;
+    height: fit-content;
+    margin: 0 auto;
+    align-content: center;
+  }
+  .navbar {
+    visibility: hidden;
+    height: 0;
+    max-height: 0;
+  }
+  #qrcode-div-print {
+    display: block;
+  }
+  #print-button {
+    display: none;
+    height: 0;
+  }
+  .modal {
+    display: none;
+    height: 0;
+  }
+}
+

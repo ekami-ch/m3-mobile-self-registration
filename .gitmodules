@@ -1,0 +1,3 @@
+[submodule "web-basics-helper-kit"]
+	path = web-basics-helper-kit
+	url = git@github.com:ekami-ch/web-basics-helper-kit.git
