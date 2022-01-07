@@ -19,6 +19,7 @@
 
   /* General */
   body {
+      max-width: 100%;
       overflow-x: hidden;
       overflow-y: auto;
       font-family: 'FoundrySterling';
@@ -66,12 +67,10 @@
       content: ":";
   }
 
-  #qrcode {
-      margin: 0 auto;
-  }
   #qrcode canvas {
-    width: 100vw;
-    height: auto;
+    width: 90%;
+    margin: 0 auto;
+    display: block;
   }
   #qrcode-div {
     display: none;
