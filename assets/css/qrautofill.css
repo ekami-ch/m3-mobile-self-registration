@@ -158,5 +158,8 @@
     display: none;
     height: 0;
   }
+  #download-div {
+    visibility: hidden;
+  }
 }
 
