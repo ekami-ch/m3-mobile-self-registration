@@ -1,33 +1,19 @@
-import {generateQRContent, initQRCode, updateQRCode, setQrOptionsFromURL, changeDisplayFromPlatform} from 'qrgenerator';
+import {generateQRContent, initQRCode, updateQRCode, setQrOptionsFromURL, changeDisplayFromPlatform, generateAndDownloadQrCode} from 'qrgenerator';
 import {generateForm} from 'formgenerator';
 import $ from 'jquery';
 
 function downloadCanvas(){
-
-    var canvas = document.querySelector("canvas").toDataURL("image/png");
-    var last_name = document.querySelector("#lastname").value;
-    var first_name = document.querySelector("#firstname").value;
-    var birthdate = document.querySelector("#birthdate").value;
-    /* Anchor Element */
-    var a = document.createElement('a');
-
-    /* File Name */
-    a.download = last_name + " " + first_name + " " + birthdate + ".png";
-
-    /* Set Canvas as download link href */
-    a.href = canvas;
-
-    /* Emulate Click on the link */
-    a.click();
-
-    /* Reload the page */
-    window.location.reload()
+    let filename = document.querySelector("#lastname").value + " " + document.querySelector("#firstname").value + " " + document.querySelector("#birthdate").value;
+    let title = document.querySelector("#lastname").value + " " + document.querySelector("#firstname").value;
+    
+    generateAndDownloadQrCode(filename, title);
 
 }
 
 document.addEventListener('DOMContentLoaded', function() {
     // get parameters from URL
     let urlParams = new URLSearchParams(document.location.search.substring(1));
+    
     generateForm('form');
     setQrOptionsFromURL();
     initQRCode('qrcode', 'qroutputvalue');
